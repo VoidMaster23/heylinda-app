@@ -39,18 +39,18 @@ jobs:
         with:
           node-version: 14.x
       - name: Install Dependencies
-        run: npm install
+        run: yarn install
 
         # Letting this github know who I am
         
-      - name: Setup Github Credentials
-        run: |
-          git config user.name $GITHUB_ACTOR
-          git config user.email gh-actions-${GITHUB_ACTOR}@github.com
+      # - name: Setup Github Credentials
+      #   run: |
+      #     git config user.name $GITHUB_ACTOR
+      #     git config user.email gh-actions-${GITHUB_ACTOR}@github.com
         # Semantic Versioning, bumping and tagging
         
-      - name: Bump Version Numbers
-        run: npm run release
+      # - name: Bump Version Numbers
+      #   run: npm run release
 
         # Pushing all of the bumped files and changelog.md back to the repo
         # Also pushing the brand new tag
